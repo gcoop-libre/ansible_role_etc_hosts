@@ -1,0 +1,15 @@
+---
+
+- name: Get hostname
+  command: hostname -s
+  register: hostname_cmd
+
+- name: Get host fqdn
+  command: hostname -f
+  register: host_fqdn_cmd
+
+- name: Define hostname
+  set_fact:
+      etc_hosts_hostname: "{{ hostname_cmd.stdout }}"
+      etc_hosts_host_fqdn: "{{ host_fqdn_cmd.stdout }}"
+  when: not hostname_cmd.failed and not host_fqdn_cmd.failed

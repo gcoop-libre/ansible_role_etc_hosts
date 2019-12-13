@@ -1,0 +1,19 @@
+galaxy_info:
+  author: Martin Ales
+  role_name: etc_hosts
+  description: Ansible role that defines the /etc/hosts file.
+  company: gcoop Cooperativa de Software Libre
+  license: GPLv3
+  min_ansible_version: 2.7.1
+
+  platforms:
+    - name: ubuntu
+      versions:
+        - bionic
+
+  galaxy_tags:
+    - hostname
+    - fqdn
+    - hosts
+
+dependencies: []

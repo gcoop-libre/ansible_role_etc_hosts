@@ -1,0 +1,8 @@
+---
+
+- name: Define /etc/hosts
+  hosts: [test]
+  become: yes
+
+  roles:
+    - gcoop-libre.etc_hosts

@@ -1,0 +1,8 @@
+127.0.0.1   localhost.localdomain localhost
+127.0.1.1   {{ etc_hosts_host_fqdn }} {{ etc_hosts_hostname }}
+
+{% for host in etc_hosts_extra_hosts %}
+{% if host is not none %}
+{{ host }}
+{% endif %}
+{% endfor %}
