@@ -1,0 +1,17 @@
+---
+
+- include_tasks: hostname_cmd.yml
+  when: define_hostname_by_hostname_cmd
+
+- name: Fail when empty hostname and fqdn
+  fail:
+      msg: 'etc_hosts_hostname or etc_hosts_host_fqdn are empty'
+  when: (etc_hosts_hostname is not defined) or (etc_hosts_hostname|length == 0) or (etc_hosts_host_fqdn is not defined) or (etc_hosts_host_fqdn|length == 0)
+
+- name: Define /etc/hosts 
+  template:
+    src: templates/etc_hosts.j2
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: 0644

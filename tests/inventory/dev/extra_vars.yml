@@ -1,0 +1,7 @@
+---
+
+define_hostname_by_hostname_cmd: False
+
+etc_hosts_hostname: server
+etc_hosts_host_fqdn: server.example.com
+
